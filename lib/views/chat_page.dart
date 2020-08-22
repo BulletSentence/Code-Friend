@@ -47,7 +47,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future _dialogFlowRequest({String query}) async {
-    // Adiciona uma mensagem temporária na lista
     _addMessage(
         name: 'Luis Fernando',
         text: 'Digitando...',
@@ -58,7 +57,7 @@ class _HomePageState extends State<HomePage> {
     Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle, language: "pt-BR");
     AIResponse response = await dialogflow.detectIntent(query);
 
-    // remove a mensagem temporária
+    // Remove o status de digitando e adiciona a mensagem vinda da internet
     setState(() {
       _messageList.removeAt(0);
     });
