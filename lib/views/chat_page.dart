@@ -1,5 +1,5 @@
 import 'package:codefriend/models/chat_message.dart';
-import 'package:codefriend/widgets/chat_message_list_item.dart';
+import 'package:codefriend/widgets/messages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 

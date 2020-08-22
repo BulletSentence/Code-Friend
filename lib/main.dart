@@ -1,4 +1,4 @@
-import 'package:codefriend/views/home_page.dart';
+import 'package:codefriend/views/chat_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
