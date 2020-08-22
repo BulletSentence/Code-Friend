@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
     // Adiciona uma mensagem temporária na lista
     _addMessage(
         name: 'Luis Fernando',
-        text: 'Digitando..',
+        text: 'Digitando...',
         type: ChatMessageType.received);
 
     // Faz a autenticação com o serviço, envia a mensagem e recebe uma resposta da Intent
