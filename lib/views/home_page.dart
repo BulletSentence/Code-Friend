@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
       child: new TextField(
         controller: _controllerText,
         decoration: new InputDecoration.collapsed(
-          hintText: "Enviar mensagem",
+          hintText: "Enviar",
         ),
       ),
     );
