@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Texto para enviar
+  // Container com o texto e o icone
   Widget _buildUserInput() {
     return Container(
       margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10),
