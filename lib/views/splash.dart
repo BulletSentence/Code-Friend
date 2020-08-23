@@ -1,3 +1,5 @@
+import 'package:codefriend/views/chat_page.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -9,22 +11,23 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          child: FlareActor('assets/PulltoRefresh.flr', animation: 'Opacity'),
+      body: Container(
+          child: FlareActor(
+            'assets/love_load.flr',
+            animation: 'heart',
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.bottomCenter,
+          ),
         ),
-      ),
     );
   }
 
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then((_) {
+    Future.delayed(Duration(seconds: 5)).then((_) {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => Home()),
+        MaterialPageRoute(builder: (context) => HomePage()),
       );
     });
   }
