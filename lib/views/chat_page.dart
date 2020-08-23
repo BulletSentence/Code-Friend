@@ -27,7 +27,6 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: <Widget>[
           _buildList(),
-          Divider(height: 1.0),
           _buildUserInput(),
         ],
       ),
@@ -101,7 +100,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Botão para enviar a mensagem
+  // Botão para enviar a mensagem (Icone)
   Widget _buildSendButton() {
     return new Container(
       margin: new EdgeInsets.only(left: 8.0),
@@ -115,10 +114,18 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Monta uma linha com o campo de text e o botão de enviao
+  // Texto para enviar
   Widget _buildUserInput() {
     return Container(
-      color: Colors.white,
+      margin: new EdgeInsets.only(left: 5, right: 5, bottom: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.white,
+        border: Border.all(
+        color: Colors.grey,
+        width: 1,
+        ),
+      ),
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: new Row(
         children: <Widget>[
