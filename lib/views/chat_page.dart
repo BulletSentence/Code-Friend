@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Text('AI'),
+        title: Text('Pocket Luis Fernando'),
       ),
       body: Column(
         children: <Widget>[
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Cria a lista de mensagens (de baixo para cima)
+  // Cria a lista com as mensagens
   Widget _buildList() {
     return Flexible(
       child: ListView.builder(
@@ -46,12 +46,16 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future _dialogFlowRequest({String query}) async {
-    _addMessage(
-        name: 'Luis Fernando',
-        text: 'Digitando...',
-        type: ChatMessageType.received);
 
-    // Faz a autenticação com o serviço, envia a mensagem e recebe uma resposta da Intent
+    // Dá um tempo em segundos para a resposta do BOT
+    await Future.delayed(const Duration(seconds: 1), (){
+      _addMessage(
+          name: 'Luis Fernando',
+          text: 'Digitando...',
+          type: ChatMessageType.received);
+    });
+
+    // Recebe a função da IA
     AuthGoogle authGoogle = await AuthGoogle(fileJson: "assets/credentials.json").build();
     Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle, language: "pt-BR");
     AIResponse response = await dialogflow.detectIntent(query);
@@ -103,9 +107,13 @@ class _HomePageState extends State<HomePage> {
   // Botão para enviar a mensagem (Icone)
   Widget _buildSendButton() {
     return new Container(
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.pink,
+        ),
       margin: new EdgeInsets.only(left: 8.0),
       child: new IconButton(
-          icon: new Icon(Icons.send, color: Theme.of(context).accentColor),
+          icon: new Icon(Icons.send, color: Colors.white),
           onPressed: () {
             if (_controllerText.text.isNotEmpty) {
               _sendMessage(text: _controllerText.text);
@@ -117,7 +125,7 @@ class _HomePageState extends State<HomePage> {
   // Texto para enviar
   Widget _buildUserInput() {
     return Container(
-      margin: new EdgeInsets.only(left: 5, right: 5, bottom: 10),
+      margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
         color: Colors.white,
@@ -126,7 +134,7 @@ class _HomePageState extends State<HomePage> {
         width: 1,
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.only(left: 20),
       child: new Row(
         children: <Widget>[
           _buildTextField(),
