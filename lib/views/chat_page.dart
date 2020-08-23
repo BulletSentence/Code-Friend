@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:codefriend/models/chat_message.dart';
 import 'package:codefriend/widgets/messages.dart';
+import 'package:codefriend/widgets/popup_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
@@ -23,6 +26,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: new AppBar(
         title: Text('Pocket Luis Fernando'),
+        leading: Icon(Icons.message),
+        actions: <Widget>[
+          IconButton(
+            onPressed: ()=> Exit_dialog(context),
+            icon: Icon(Icons.exit_to_app),
+            tooltip: 'Close app',
+          )
+        ],
       ),
       body: Column(
         children: <Widget>[
