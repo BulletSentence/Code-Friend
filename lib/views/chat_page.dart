@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Text('Pocket Luis Fernando'),
+        title: Text('Lore Artificial Intelligence'),
         leading: Icon(Icons.message),
         actions: <Widget>[
           IconButton(
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
     // Dá um tempo em segundos para a resposta do BOT
     await Future.delayed(const Duration(seconds: 1), (){
       _addMessage(
-          name: 'Luis Fernando',
+          name: 'Lorelai',
           text: 'Digitando...',
           type: ChatMessageType.received);
     });
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
 
     // adiciona a mensagem com a resposta do DialogFlow
     _addMessage(
-        name: 'Luis Fernando',
+        name: 'Lorelai',
         text: response.getMessage() ?? '',
         type: ChatMessageType.received);
   }

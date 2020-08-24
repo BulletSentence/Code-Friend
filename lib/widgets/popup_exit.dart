@@ -15,11 +15,11 @@ Exit_dialog(BuildContext context) {
       exit(1);
     },
   );
-  
+
   //configura o AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Você está prestes a sair"),
-    content: Text("Deseja realmente me abandonar?"),
+    content: Text("Deseja realmente fechar a conversa?"),
     actions: [
       cancelaButton,
       continuaButton,
