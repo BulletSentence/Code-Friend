@@ -108,6 +108,7 @@ class _HomePageState extends State<HomePage> {
     return new Flexible(
       child: new TextField(
         controller: _controllerText,
+        textCapitalization: TextCapitalization.sentences,
         decoration: new InputDecoration.collapsed(
           hintText: "Enviar",
         ),
