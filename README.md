@@ -16,8 +16,9 @@ The application is not a "Psychologist", but a tool where the user can
 talk about your day to day life, vent and feel heard.
 
 # Views
+<div>
 <img src="https://user-images.githubusercontent.com/37451620/91050715-6f94ea80-e5f5-11ea-9c1b-6ebbc0a76182.png"  height="200" />
 <img src="https://user-images.githubusercontent.com/37451620/91050719-70c61780-e5f5-11ea-8277-eb194e58af26.png" height="200" />
-
+</div>
 
 
