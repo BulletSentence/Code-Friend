@@ -15,10 +15,29 @@ suicide, etc).
 The application is not a "Psychologist", but a tool where the user can
 talk about your day to day life, vent and feel heard.
 
+---
+
+ ### Want to buy me a coffee? :coffee: :money_with_wings:
+ <a target="_blank" href="https://donorbox.org/buy-me-a-coffee-21?default_interval=o"><img src="https://i1.wp.com/www.kitsilano.ca/wp-content/uploads/2020/04/kofi.png?ssl=1" height="40"/></a>
+ 
+---
+
 # Views 📱
-<div>
+
+<details>
+<summary>Splash Screen</summary>
+<br>
 <img src="https://user-images.githubusercontent.com/37451620/91050715-6f94ea80-e5f5-11ea-9c1b-6ebbc0a76182.png"  height="500" />
+<br>
+</details>
+
+---
+
+<details>
+<summary>Chat Screen</summary>
+<br>
 <img src="https://user-images.githubusercontent.com/37451620/91050719-70c61780-e5f5-11ea-8277-eb194e58af26.png" height="500" />
-</div>
+<br>
+</details>
 
-
+---
