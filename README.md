@@ -1,5 +1,20 @@
-# Code Friend
- An A.I. created to talk with people.
+# Code Friend (Beta)
+A recurring problem these days is that we are always connected and
+receiving information in an unbridled way, but the problem of remaining long
+periods in this heap of information is that we distance ourselves from human interactions,
+This causes serious social and psychological problems.
+People who have few social relationships can develop a low empathy,
+social fear, loneliness and anxiety.
 
-# IA Code Script:
-Node.JS
+The proposal of the application is to create an AI as a virtual chat friend, which will advise the
+user during recurring problems of the current world situation: Anxiety, depression, and
+during the conversations between the user and the APP, he will have available the numbers of
+emergencies if you have complained about serious problems (Thoughts on
+suicide, etc).
+
+The application is not a "Psychologist", but a tool where the user can
+talk about your day to day life, vent and feel heard.
+
+# Views
+
+
