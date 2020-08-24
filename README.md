@@ -31,7 +31,6 @@ talk about your day to day life, vent and feel heard.
 <br>
 </details>
 
----
 
 <details>
 <summary>Chat Screen</summary>
