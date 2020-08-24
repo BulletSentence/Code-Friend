@@ -22,6 +22,12 @@ talk about your day to day life, vent and feel heard.
  
 ---
 
+# Colors
+
+![colors](https://user-images.githubusercontent.com/37451620/91059356-fbac0f80-e5ff-11ea-9450-ad51e3289157.JPG)
+
+---
+
 # Views 📱
 
 <details>
