@@ -1,3 +1,4 @@
+import 'package:codefriend/widgets/loginContainer.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -25,13 +26,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: <Widget>[
                     Center(
                       child: Padding(
-                        padding: EdgeInsets.only(top: 105, bottom: 30),
-                        child: Image.asset('assets/love.png', width: 150,
+                        padding: EdgeInsets.only(top: 200, bottom: 10),
+                        child: Image.asset('assets/love.png', width: 100,
                           fit: BoxFit.contain,
                         ),
                       ),
-                      LoginContainer()
                     ),
+                    LoginContainer(),
+                    
                   ],
                 )
               ],

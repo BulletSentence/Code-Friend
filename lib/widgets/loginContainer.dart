@@ -1,3 +1,4 @@
+import 'package:codefriend/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginContainer extends StatelessWidget {
@@ -8,7 +9,16 @@ class LoginContainer extends StatelessWidget {
       child: Form(
         child: Column(
           children: <Widget>[
-            
+            InputField(
+              hintText: "Login",
+              disabled: false,
+              icon: Icons.person,
+            ),
+            InputField(
+              hintText: "Senha",
+              disabled: true,
+              icon: Icons.vpn_key,
+            )
           ],
         ),
       ),
