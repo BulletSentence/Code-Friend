@@ -10,4 +10,6 @@ class ChatMessage {
     this.text,
     this.type = ChatMessageType.sent,
   });
+  
+
 }
