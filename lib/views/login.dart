@@ -1,4 +1,5 @@
 import 'package:codefriend/widgets/loginContainer.dart';
+import 'package:codefriend/widgets/signup_btn.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     LoginContainer(),
-                    
+                    SignUpButton(),
                   ],
                 )
               ],
