@@ -16,6 +16,28 @@ class _LoginScreenState extends State<LoginScreen> {
             fit: BoxFit.cover,
           )
         ),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 105, bottom: 30),
+                        child: Image.asset('assets/love.png', width: 150,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      LoginContainer()
+                    ),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

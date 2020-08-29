@@ -1,3 +1,4 @@
+import 'package:codefriend/views/login.dart';
 import 'package:codefriend/views/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ void main() {
     theme: ThemeData(
       primarySwatch: Colors.pink,
     ),
-    home: Splash(),
+    home: LoginScreen(),
   ));
 }
 
