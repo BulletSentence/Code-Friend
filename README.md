@@ -49,7 +49,7 @@ talk about your day to day life, vent and feel heard.
 <details>
 <summary>Login Screen</summary>
 <br>
-<img src="https://user-images.githubusercontent.com/37451620/91670607-8d7eb580-eaf5-11ea-80c4-6ad03952f8fe.jpg" height="500" />
+<img src="https://user-images.githubusercontent.com/37451620/91725726-86978780-eb75-11ea-90b7-cca39237d22a.jpg" height="500" />
 <br>
 </details>
 
