@@ -33,7 +33,7 @@ talk about your day to day life, vent and feel heard.
 <details>
 <summary>Splash Screen</summary>
 <br>
-<img src="https://user-images.githubusercontent.com/37451620/91050715-6f94ea80-e5f5-11ea-9c1b-6ebbc0a76182.png"  height="500" />
+<img src="https://user-images.githubusercontent.com/37451620/91725646-6b2c7c80-eb75-11ea-8f50-5ca4b417a8e6.jpg"  height="500" />
 <br>
 </details>
 
