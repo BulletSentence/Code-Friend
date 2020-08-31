@@ -24,7 +24,7 @@ talk about your day to day life, vent and feel heard.
 
 # Colors
 
-![colors](https://user-images.githubusercontent.com/37451620/91059356-fbac0f80-e5ff-11ea-9450-ad51e3289157.JPG)
+![colors](https://user-images.githubusercontent.com/37451620/91731551-5358f680-eb7d-11ea-80e1-d15a9860cd03.JPG)
 
 ---
 
