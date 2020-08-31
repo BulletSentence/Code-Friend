@@ -31,21 +31,21 @@ talk about your day to day life, vent and feel heard.
 # Views 📱
 
 <details>
-<summary>Splash Screen</summary>
+<summary>Splash Screen ✔</summary>
 <br>
 <img src="https://user-images.githubusercontent.com/37451620/91725646-6b2c7c80-eb75-11ea-8f50-5ca4b417a8e6.jpg"  height="500" />
 <br>
 </details>
 
 <details>
-<summary>Login Screen</summary>
+<summary>Login Screen ✔</summary>
 <br>
 <img src="https://user-images.githubusercontent.com/37451620/91725726-86978780-eb75-11ea-90b7-cca39237d22a.jpg" height="500" />
 <br>
 </details>
 
 <details>
-<summary>Chat Screen</summary>
+<summary>Chat Screen ✔</summary>
 <br>
 <img src="https://user-images.githubusercontent.com/37451620/91050719-70c61780-e5f5-11ea-8277-eb194e58af26.png" height="500" />
 <br>
