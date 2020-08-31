@@ -1,4 +1,4 @@
-# Code Friend (Beta) 😍
+# Code Friend 😍
 A recurring problem these days is that we are always connected and
 receiving information in an unbridled way, but the problem of remaining long
 periods in this heap of information is that we distance ourselves from human interactions,
@@ -31,18 +31,27 @@ talk about your day to day life, vent and feel heard.
 # Views 📱
 
 <details>
-<summary>Splash Screen</summary>
+<summary>Splash Screen ✔</summary>
 <br>
-<img src="https://user-images.githubusercontent.com/37451620/91050715-6f94ea80-e5f5-11ea-9c1b-6ebbc0a76182.png"  height="500" />
+<img src="https://user-images.githubusercontent.com/37451620/91725646-6b2c7c80-eb75-11ea-8f50-5ca4b417a8e6.jpg"  height="500" />
 <br>
 </details>
 
+<details>
+<summary>Login Screen ✔</summary>
+<br>
+<img src="https://user-images.githubusercontent.com/37451620/91725726-86978780-eb75-11ea-90b7-cca39237d22a.jpg" height="500" />
+<br>
+</details>
 
 <details>
-<summary>Chat Screen</summary>
+<summary>Chat Screen ✔</summary>
 <br>
 <img src="https://user-images.githubusercontent.com/37451620/91050719-70c61780-e5f5-11ea-8277-eb194e58af26.png" height="500" />
 <br>
 </details>
 
+
 ---
+
+
