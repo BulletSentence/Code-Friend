@@ -8,16 +8,17 @@ class FillingAnimation extends StatelessWidget {
 
   Widget _buildAnimation(BuildContext context, Widget child){
     return Padding(
-      padding: EdgeInsets.only(bottom: 50),
+      padding: EdgeInsets.only(bottom: 120),
       child: InkWell(
         onTap: (){},
         child: Container(
-          width: 300,
-          height: 60,
+          width: 350,
+          height: 55,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: Colors.pink,
-            borderRadius: BorderRadius.all(Radius.circular(25),),
+            color: Colors.blue[800],
+            borderRadius: BorderRadius.all(Radius.circular(5),
+            ),
           ),
           child: Text(
             "Entrar",

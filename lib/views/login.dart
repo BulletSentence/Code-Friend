@@ -1,4 +1,5 @@
 import 'package:codefriend/widgets/filling_animation.dart';
+import 'package:codefriend/widgets/google_login_btn.dart';
 import 'package:codefriend/widgets/loginContainer.dart';
 import 'package:codefriend/widgets/signup_btn.dart';
 import 'package:flutter/material.dart';
@@ -33,10 +34,7 @@ class _LoginScreenState extends State<LoginScreen>
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/wallpaper.jpg'),
-            fit: BoxFit.cover,
-          )
+          color: Colors.white70
         ),
         child: ListView(
           padding: EdgeInsets.zero,
@@ -48,8 +46,8 @@ class _LoginScreenState extends State<LoginScreen>
                   children: <Widget>[
                     Center(
                       child: Padding(
-                        padding: EdgeInsets.only(top: 200, bottom: 10),
-                        child: Image.asset('assets/love.png', width: 100,
+                        padding: EdgeInsets.only(top: 100, bottom: 20),
+                        child: Image.asset('assets/logo.png', width: 150,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -58,9 +56,12 @@ class _LoginScreenState extends State<LoginScreen>
                     SignUpButton(),
                   ],
                 ),
+                GoogleLogin(
+                  controller: _animationController.view,
+                ),
                 FillingAnimation(
                   controller: _animationController.view,
-                )
+                ),
               ],
             ),
           ],

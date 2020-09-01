@@ -12,33 +12,32 @@ class InputField extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: Colors.pink, width: 1),
+          bottom: BorderSide(color: Colors.blue[800], width: 1),
         ),
       ),
       child: TextFormField(
         obscureText: disabled,
-        style: TextStyle(color: Colors.pink),
+        style: TextStyle(color: Colors.blue[800]),
         decoration: InputDecoration(
           icon: Icon(
             icon,
-            color: Colors.pink,
+            color: Colors.blue[800],
           ),
           border: InputBorder.none,
           hintText: hintText,
           hintStyle: TextStyle(
-            color: Colors.pinkAccent,
+            color: Colors.blue[800],
             fontSize: 20,
           ),
           contentPadding: EdgeInsets.only(
             top: 25,
             right: 25,
-            bottom: 25,
+            bottom: 20,
             left: 5,
           ),
         ),
       ),
       margin: new EdgeInsets.only(left: 30, right: 45),
-
     );
   }
 }
