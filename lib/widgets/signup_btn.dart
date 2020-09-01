@@ -5,18 +5,18 @@ class SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       padding: EdgeInsets.only(
-        top: 200,
+        top: 210,
       ),
       onPressed: (){
 
       },
       child: Text(
-        'Cadastre-se Agora!',
+        'Cadastre-se Agora',
         textAlign: TextAlign.center,
         overflow: TextOverflow.ellipsis,
         style: TextStyle(
           fontSize: 15,
-          color: Colors.pinkAccent,
+          color: Colors.blue[800],
           fontWeight: FontWeight.w500,
         ),
       ),
