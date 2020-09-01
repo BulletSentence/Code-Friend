@@ -3,6 +3,7 @@ import 'package:codefriend/widgets/google_login_btn.dart';
 import 'package:codefriend/widgets/loginContainer.dart';
 import 'package:codefriend/widgets/signup_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -31,6 +32,7 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
+    timeDilation = 1;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(

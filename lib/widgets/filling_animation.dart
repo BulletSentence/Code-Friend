@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class FillingAnimation extends StatelessWidget {
-
   final AnimationController controller;
 
-  FillingAnimation({this.controller}) :
-        buttonAnim = Tween(begin: 350.0, end: 55.0).animate(
+  FillingAnimation({this.controller})
+      : buttonAnim = Tween(begin: 350.0, end: 55.0).animate(
+            CurvedAnimation(parent: controller, curve: Interval(0.0, 0.150))),
+        buttonfill = Tween(begin: 55.0, end: 1000.0).animate(
           CurvedAnimation(
             parent: controller,
-            curve: Interval(0.0, 0.150)
-          )
+            curve: Interval(0.5, 1, curve: Curves.bounceInOut),
+          ),
         );
 
   final Animation<double> buttonAnim;
@@ -17,36 +18,46 @@ class FillingAnimation extends StatelessWidget {
 
   var border = BorderRadius.all(Radius.circular(5));
 
-  Widget _buildAnimation(BuildContext context, Widget child){
+  Widget _buildAnimation(BuildContext context, Widget child) {
     return Padding(
       padding: EdgeInsets.only(bottom: 120),
       child: InkWell(
-        onTap: (){
+        onTap: () {
           controller.forward();
-         border = BorderRadius.all(Radius.circular(50));
+          border = BorderRadius.all(Radius.circular(50));
         },
-        child: Container(
-          width: buttonAnim.value,
-          height: 55,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Colors.blue[800],
-            borderRadius: border,
-            ),
-          child: _buildLoading(context)
-          ),
-        ),
+        child: buttonfill.value <= 60
+            ? Container(
+                width: buttonAnim.value,
+                height: 55,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.blue[800],
+                  borderRadius: border,
+                ),
+                child: _buildLoading(context),
+              )
+            : Container(
+                width: buttonfill.value,
+                height: buttonfill.value,
+                decoration: BoxDecoration(
+                  color: Colors.blue[800],
+                  shape: buttonfill.value < 500 ?
+                      BoxShape.circle : BoxShape.rectangle,
+                ),
+              ),
+      ),
     );
   }
 
-  Widget _buildLoading(BuildContext context){
-    if (buttonAnim.value > 80){
+  Widget _buildLoading(BuildContext context) {
+    if (buttonAnim.value > 80) {
       return Text(
-          "Entrar",
-          style: TextStyle(
+        "Entrar",
+        style: TextStyle(
           color: Colors.white,
           fontSize: 30,
-      ),
+        ),
       );
     } else {
       return CircularProgressIndicator(
