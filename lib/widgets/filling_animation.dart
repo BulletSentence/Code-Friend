@@ -4,32 +4,56 @@ class FillingAnimation extends StatelessWidget {
 
   final AnimationController controller;
 
-  FillingAnimation({this.controller});
+  FillingAnimation({this.controller}) :
+        buttonAnim = Tween(begin: 350.0, end: 55.0).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: Interval(0.0, 0.150)
+          )
+        );
+
+  final Animation<double> buttonAnim;
+  final Animation<double> buttonfill;
+
+  var border = BorderRadius.all(Radius.circular(5));
 
   Widget _buildAnimation(BuildContext context, Widget child){
     return Padding(
       padding: EdgeInsets.only(bottom: 120),
       child: InkWell(
-        onTap: (){},
+        onTap: (){
+          controller.forward();
+         border = BorderRadius.all(Radius.circular(50));
+        },
         child: Container(
-          width: 350,
+          width: buttonAnim.value,
           height: 55,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: Colors.blue[800],
-            borderRadius: BorderRadius.all(Radius.circular(5),
+            borderRadius: border,
             ),
-          ),
-          child: Text(
-            "Entrar",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-            ),
+          child: _buildLoading(context)
           ),
         ),
-      ),
     );
+  }
+
+  Widget _buildLoading(BuildContext context){
+    if (buttonAnim.value > 80){
+      return Text(
+          "Entrar",
+          style: TextStyle(
+          color: Colors.white,
+          fontSize: 30,
+      ),
+      );
+    } else {
+      return CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        strokeWidth: 1.0,
+      );
+    }
   }
 
   @override
