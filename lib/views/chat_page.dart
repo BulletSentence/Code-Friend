@@ -6,12 +6,12 @@ import 'package:codefriend/widgets/popup_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
-class HomePage extends StatefulWidget {
+class ChatPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _ChatPageState createState() => _ChatPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ChatPageState extends State<ChatPage> {
   final _messageList = <ChatMessage>[];
   final _controllerText = new TextEditingController();
 
