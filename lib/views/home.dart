@@ -1,3 +1,4 @@
+import 'package:codefriend/widgets/home_animation.dart';
 import 'package:flutter/material.dart';
 
 class HomeSreen extends StatefulWidget {
@@ -22,6 +23,8 @@ class _HomeSreenState extends State<HomeSreen> with SingleTickerProviderStateMix
   
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return HomeAnimation(
+      controller: _controller.view,
+    );
   }
 }
