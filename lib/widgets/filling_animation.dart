@@ -9,7 +9,7 @@ class FillingAnimation extends StatelessWidget {
         buttonfill = Tween(begin: 55.0, end: 1000.0).animate(
           CurvedAnimation(
             parent: controller,
-            curve: Interval(0.5, 1, curve: Curves.bounceInOut),
+            curve: Interval(0.5, 1, curve: Curves.easeInOutCirc),
           ),
         );
 
