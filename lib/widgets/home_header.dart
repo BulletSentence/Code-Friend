@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
-class HomeHeader extends StatefulWidget {
-  @override
-  _HomeHeaderState createState() => _HomeHeaderState();
-}
+class HomeHeader extends StatelessWidget {
 
-class _HomeHeaderState extends State<HomeHeader> {
+  final Animation<double> containerGrow;
+  HomeHeader({@required this.containerGrow});
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+
+    final screenSize = MediaQuery.of(context).size;
+
+    return Container(
+      height: screenSize.height * 0.3,
+      decoration: BoxDecoration(
+        color: Colors.blue[800],
+      ),
+    );
   }
 }
