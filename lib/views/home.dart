@@ -13,6 +13,7 @@ class _HomeSreenState extends State<HomeSreen> with SingleTickerProviderStateMix
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 2000));
+    _controller.forward();
   }
 
   @override
