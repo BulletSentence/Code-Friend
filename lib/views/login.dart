@@ -1,4 +1,5 @@
-import 'package:codefriend/widgets/filling_animation.dart';
+import 'package:codefriend/views/home.dart';
+import 'package:codefriend/widgets/login_animation.dart';
 import 'package:codefriend/widgets/google_login_btn.dart';
 import 'package:codefriend/widgets/loginContainer.dart';
 import 'package:codefriend/widgets/signup_btn.dart';
@@ -22,6 +23,15 @@ class _LoginScreenState extends State<LoginScreen>
       vsync: this,
       duration: Duration(seconds: 2),
     );
+
+    _animationController.addStatusListener((status){
+      if(status == AnimationStatus.completed){
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context)=>HomeSreen()),
+        );
+      }
+
+    });
   }
 
   @override
