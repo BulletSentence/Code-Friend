@@ -1,4 +1,4 @@
-import 'package:codefriend/views/login.dart';
+import 'package:codefriend/views/Welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,7 +7,7 @@ void main() {
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
-    home: LoginScreen(),
+    home: WelcomeScreen(),
   ));
 }
 
