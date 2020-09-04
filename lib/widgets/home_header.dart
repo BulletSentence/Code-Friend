@@ -10,7 +10,7 @@ class HomeHeader extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
 
     return Container(
-      height: screenSize.height * 0.35,
+      height: screenSize.height,
       decoration: BoxDecoration(
         color: Colors.blue[800],
       ),
@@ -41,6 +41,9 @@ class HomeHeader extends StatelessWidget {
                 width: containerGrow.value * 35,
                 height: containerGrow.value * 35,
                 margin: EdgeInsets.only(left: 80),
+                child: Text(
+                  "Oi"
+                ),
                 ),
             ),
           ],
