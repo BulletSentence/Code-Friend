@@ -1,4 +1,4 @@
-import 'package:codefriend/views/Login/components/body.dart';
+import 'package:codefriend/views/Signup/components/body.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {

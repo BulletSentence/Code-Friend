@@ -7,7 +7,6 @@ import 'package:codefriend/views/Login/login_screen.dart';
 import 'package:codefriend/views/Signup/components/social_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'or_divider.dart';
 
 class Body extends StatelessWidget {

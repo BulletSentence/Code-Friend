@@ -25,4 +25,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/credentials.json
-    - assets/
+    - assets/icons/
+    - assets/images/
