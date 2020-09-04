@@ -1,5 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_chat_bubble/bubble_type.dart';
+import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_4.dart';
 
 class HomeHeader extends StatelessWidget {
   final Animation<double> containerGrow;
@@ -16,35 +20,44 @@ class HomeHeader extends StatelessWidget {
       ),
       child: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text(
-              "Bem-Vindo",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-              ),
+            SizedBox(
+              height: 50,
             ),
-            Container(
-              alignment: Alignment.topRight,
-              width: containerGrow.value * 120,
-              height: containerGrow.value * 120,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage("assets/avatar.jpg"),
-                  fit: BoxFit.cover,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  alignment: Alignment.center,
+                  width: containerGrow.value * 120,
+                  height: containerGrow.value * 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      alignment: Alignment.bottomLeft,
+                      image: AssetImage("assets/avatar.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-              ),
-              child: Container(
-                width: containerGrow.value * 35,
-                height: containerGrow.value * 35,
-                margin: EdgeInsets.only(left: 80),
-                child: Text(
-                  "Oi"
-                ),
-                ),
+                ChatBubble(
+                  clipper: ChatBubbleClipper4(type: BubbleType.receiverBubble),
+                  backGroundColor: Color(0xffE7E7ED),
+                  margin: EdgeInsets.only(bottom: 80, right: 10, left: 10),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width * 0.3,
+                      maxHeight: MediaQuery.of(context).size.height,
+                    ),
+                    child: Text(
+                      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                )
+              ],
             ),
           ],
         ),
