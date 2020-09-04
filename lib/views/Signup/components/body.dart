@@ -1,13 +1,14 @@
+import 'package:codefriend/components/already_have_an_account_acheck.dart';
+import 'package:codefriend/components/rounded_button.dart';
+import 'package:codefriend/components/rounded_input_field.dart';
+import 'package:codefriend/components/rounded_password_field.dart';
+import 'package:codefriend/views/Login/components/background.dart';
+import 'package:codefriend/views/Login/login_screen.dart';
+import 'package:codefriend/views/Signup/components/social_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Login/login_screen.dart';
-import 'package:flutter_auth/Screens/Signup/components/background.dart';
-import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
-import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
-import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
-import 'package:flutter_auth/components/rounded_button.dart';
-import 'package:flutter_auth/components/rounded_input_field.dart';
-import 'package:flutter_auth/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'or_divider.dart';
 
 class Body extends StatelessWidget {
   @override
