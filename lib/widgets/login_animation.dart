@@ -32,7 +32,7 @@ class FillingAnimation extends StatelessWidget {
                 height: 55,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Colors.blue[800],
+                  color: Colors.yellow[800],
                   borderRadius: border,
                 ),
                 child: _buildLoading(context),
