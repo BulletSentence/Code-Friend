@@ -25,12 +25,13 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Text('Lore Artificial Intelligence'),
-        leading: Icon(Icons.message),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Icon(Icons.arrow_back, color: Colors.black54,),
         actions: <Widget>[
           IconButton(
             onPressed: ()=> Exit_dialog(context),
-            icon: Icon(Icons.exit_to_app),
+            icon: Icon(Icons.exit_to_app, color: Colors.black54),
             tooltip: 'Close app',
           )
         ],

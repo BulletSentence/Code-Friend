@@ -2,6 +2,8 @@ import 'package:codefriend/components/already_have_an_account_acheck.dart';
 import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/components/rounded_input_field.dart';
 import 'package:codefriend/components/rounded_password_field.dart';
+import 'package:codefriend/views/Chat/chat_page.dart';
+import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +41,16 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "ENTRAR",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ChatPage();
+                    },
+                  ),
+                );
+              },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(

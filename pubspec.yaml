@@ -24,6 +24,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/
     - assets/credentials.json
     - assets/icons/
     - assets/images/
