@@ -3,7 +3,6 @@ import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/components/rounded_input_field.dart';
 import 'package:codefriend/components/rounded_password_field.dart';
 import 'package:codefriend/views/Chat/chat_page.dart';
-import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +22,8 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "ENTRAR",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              "Bem-Vindo de volta!",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
             SizedBox(height: size.height * 0.03),
             SvgPicture.asset(

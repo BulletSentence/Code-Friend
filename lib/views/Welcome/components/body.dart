@@ -46,7 +46,7 @@ class Body extends StatelessWidget {
             Text(
               'Bem-Vindo, Como está?',
               style: TextStyle(
-                fontSize: 5,
+                fontSize: 20,
               ),
             ),
             SizedBox(height: 10),
