@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/constants.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
@@ -8,6 +10,30 @@ import 'package:flutter_svg/svg.dart';
 import 'background.dart';
 
 class Body extends StatelessWidget {
+
+  dynamic listImagesnotFound = [
+    "assets/icons/welcome0.svg",
+    "assets/icons/welcome1.svg",
+    "assets/icons/welcome2.svg",
+    "assets/icons/welcome3.svg",
+    "assets/icons/welcome4.svg",
+    "assets/icons/welcome5.svg",
+    "assets/icons/welcome6.svg",
+    "assets/icons/welcome8.svg",
+    "assets/icons/welcome9.svg",
+  ];
+  Random rnd;
+
+
+  String img() {
+    int min = 0;
+    int max = listImagesnotFound.length-1;
+    rnd = new Random();
+    int r = min + rnd.nextInt(max - min);
+    String image_name  = listImagesnotFound[r].toString();
+    return image_name;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -17,9 +43,14 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: size.height * 0.05),
-            SvgPicture.asset(
-              "assets/icons/chat.svg",
+            Text(
+              'Bem-Vindo, Como está?',
+              style: TextStyle(
+                fontSize: 5,
+              ),
+            ),
+            SizedBox(height: 10),
+            SvgPicture.asset(img(),
               height: size.height * 0.45,
             ),
             SizedBox(height: size.height * 0.05),
@@ -56,4 +87,5 @@ class Body extends StatelessWidget {
       ),
     );
   }
+
 }
