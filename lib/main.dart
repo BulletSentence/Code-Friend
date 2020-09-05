@@ -1,13 +1,13 @@
-import 'package:codefriend/views/login.dart';
+import 'package:codefriend/views/Welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
-      primarySwatch: Colors.blue,
+      primarySwatch: Colors.yellow,
     ),
-    home: LoginScreen(),
+    home: WelcomeScreen(),
   ));
 }
 

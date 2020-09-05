@@ -52,12 +52,15 @@ class HomeHeader extends StatelessWidget {
                       maxHeight: MediaQuery.of(context).size.height,
                     ),
                     child: Text(
-                      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+                      "Bom dia Bebezinho! Poderia me mandar o numero do seu cartão? :3",
                       style: TextStyle(color: Colors.black),
                     ),
                   ),
                 )
               ],
+            ),
+            RaisedButton(
+              elevation: 10,
             ),
           ],
         ),

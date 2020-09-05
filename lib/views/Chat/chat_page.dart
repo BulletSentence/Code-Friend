@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:codefriend/models/chat_message.dart';
 import 'package:codefriend/widgets/messages.dart';
 import 'package:codefriend/widgets/popup_exit.dart';
@@ -25,12 +24,13 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: Text('Lore Artificial Intelligence'),
-        leading: Icon(Icons.message),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Icon(Icons.arrow_back, color: Colors.black54,),
         actions: <Widget>[
           IconButton(
             onPressed: ()=> Exit_dialog(context),
-            icon: Icon(Icons.exit_to_app),
+            icon: Icon(Icons.exit_to_app, color: Colors.black54),
             tooltip: 'Close app',
           )
         ],
@@ -61,7 +61,7 @@ class _ChatPageState extends State<ChatPage> {
     // Dá um tempo em segundos para a resposta do BOT
     await Future.delayed(const Duration(seconds: 1), (){
       _addMessage(
-          name: 'Lorelai',
+          name: 'Lore',
           text: 'Digitando...',
           type: ChatMessageType.received);
     });
@@ -78,7 +78,7 @@ class _ChatPageState extends State<ChatPage> {
 
     // adiciona a mensagem com a resposta do DialogFlow
     _addMessage(
-        name: 'Lorelai',
+        name: 'Lore',
         text: response.getMessage() ?? '',
         type: ChatMessageType.received);
   }
@@ -121,7 +121,7 @@ class _ChatPageState extends State<ChatPage> {
     return new Container(
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
-        color: Colors.pink,
+        color: Colors.yellow,
         ),
       margin: new EdgeInsets.only(left: 8.0),
       child: new IconButton(
