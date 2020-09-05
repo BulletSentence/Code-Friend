@@ -18,13 +18,9 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "CRIAR CONTA",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: size.height * 0.03),
+            SizedBox(height: size.height * 0.04),
             SvgPicture.asset(
-              "assets/icons/signup.svg",
+              "assets/icons/create.svg",
               height: size.height * 0.35,
             ),
             RoundedInputField(
@@ -58,10 +54,6 @@ class Body extends StatelessWidget {
               children: <Widget>[
                 SocalIcon(
                   iconSrc: "assets/icons/facebook.svg",
-                  press: () {},
-                ),
-                SocalIcon(
-                  iconSrc: "assets/icons/twitter.svg",
                   press: () {},
                 ),
                 SocalIcon(
