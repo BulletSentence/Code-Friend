@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:codefriend/models/chat_message.dart';
 import 'package:codefriend/widgets/messages.dart';
 import 'package:codefriend/widgets/popup_exit.dart';
