@@ -62,7 +62,7 @@ class _ChatPageState extends State<ChatPage> {
     // Dá um tempo em segundos para a resposta do BOT
     await Future.delayed(const Duration(seconds: 1), (){
       _addMessage(
-          name: 'Lorelai',
+          name: 'Lore',
           text: 'Digitando...',
           type: ChatMessageType.received);
     });
@@ -79,7 +79,7 @@ class _ChatPageState extends State<ChatPage> {
 
     // adiciona a mensagem com a resposta do DialogFlow
     _addMessage(
-        name: 'Lorelai',
+        name: 'Lore',
         text: response.getMessage() ?? '',
         type: ChatMessageType.received);
   }
