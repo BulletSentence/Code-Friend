@@ -121,7 +121,7 @@ class _ChatPageState extends State<ChatPage> {
     return new Container(
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
-        color: Colors.amber,
+        color: Colors.yellow,
         ),
       margin: new EdgeInsets.only(left: 8.0),
       child: new IconButton(
