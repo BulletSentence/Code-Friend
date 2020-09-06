@@ -110,6 +110,10 @@ class _ChatPageState extends State<ChatPage> {
     return new Flexible(
       child: new TextField(
         controller: _controllerText,
+        textInputAction: TextInputAction.go,
+        onSubmitted: (value) {
+          _sendMessage(text: _controllerText.text);
+        },
         textCapitalization: TextCapitalization.sentences,
         decoration: new InputDecoration.collapsed(
           hintText: "Digite uma mensagem",
