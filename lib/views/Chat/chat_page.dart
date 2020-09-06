@@ -26,10 +26,16 @@ class _ChatPageState extends State<ChatPage> {
       appBar: new AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Icon(Icons.arrow_back, color: Colors.black54,),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black54,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         actions: <Widget>[
           IconButton(
-            onPressed: ()=> Exit_dialog(context),
+            onPressed: () => Exit_dialog(context),
             icon: Icon(Icons.exit_to_app, color: Colors.black54),
             tooltip: 'Close app',
           )
@@ -50,24 +56,24 @@ class _ChatPageState extends State<ChatPage> {
       child: ListView.builder(
         padding: EdgeInsets.all(8.0),
         reverse: true,
-        itemBuilder: (_, int index) => ChatMessageListItem(chatMessage: _messageList[index]),
+        itemBuilder: (_, int index) =>
+            ChatMessageListItem(chatMessage: _messageList[index]),
         itemCount: _messageList.length,
       ),
     );
   }
 
   Future _dialogFlowRequest({String query}) async {
-
     // Dá um tempo em segundos para a resposta do BOT
-    await Future.delayed(const Duration(seconds: 1), (){
-      _addMessage(
-          text: 'Digitando...',
-          type: ChatMessageType.received);
+    await Future.delayed(const Duration(seconds: 1), () {
+      _addMessage(text: 'Digitando...', type: ChatMessageType.received);
     });
 
     // Recebe a função da IA
-    AuthGoogle authGoogle = await AuthGoogle(fileJson: "assets/credentials.json").build();
-    Dialogflow dialogflow = Dialogflow(authGoogle: authGoogle, language: "pt-BR");
+    AuthGoogle authGoogle =
+        await AuthGoogle(fileJson: "assets/credentials.json").build();
+    Dialogflow dialogflow =
+        Dialogflow(authGoogle: authGoogle, language: "pt-BR");
     AIResponse response = await dialogflow.detectIntent(query);
 
     // Remove o status de digitando e adiciona a mensagem vinda da internet
@@ -77,8 +83,7 @@ class _ChatPageState extends State<ChatPage> {
 
     // adiciona a mensagem com a resposta do DialogFlow
     _addMessage(
-        text: response.getMessage() ?? '',
-        type: ChatMessageType.received);
+        text: response.getMessage() ?? '', type: ChatMessageType.received);
   }
 
   // Envia uma mensagem com o padrão a direita
@@ -89,15 +94,14 @@ class _ChatPageState extends State<ChatPage> {
 
   // Adiciona uma mensagem na lista de mensagens
   void _addMessage({String name, String text, ChatMessageType type}) {
-    var message = ChatMessage(
-        text: text, type: type);
+    var message = ChatMessage(text: text, type: type);
     setState(() {
       _messageList.insert(0, message);
     });
 
     if (type == ChatMessageType.sent) {
       // Envia a mensagem para o chatbot e aguarda sua resposta
-      _dialogFlowRequest(query: message.text);  
+      _dialogFlowRequest(query: message.text);
     }
   }
 
@@ -117,8 +121,13 @@ class _ChatPageState extends State<ChatPage> {
   // Botão para enviar a mensagem (Icone)
   Widget _buildSendButton() {
     return new Container(
-        decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30.0),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(24.0),
+            topRight: Radius.circular(24.0),
+            bottomLeft: Radius.circular(1),
+            topLeft: Radius.circular(1),
+        ),
         color: Colors.amber,
         ),
       margin: new EdgeInsets.only(left: 8.0),
@@ -137,11 +146,11 @@ class _ChatPageState extends State<ChatPage> {
     return Container(
       margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(25.0),
         color: Colors.white,
         border: Border.all(
-        color: Colors.grey,
-        width: 1,
+          color: Colors.grey,
+          width: 1,
         ),
       ),
       padding: const EdgeInsets.only(left: 20),

@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:codefriend/models/chat_message.dart';
 import 'package:codefriend/views/Chat/chat_page.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +37,6 @@ class ChatMessageListItem extends StatelessWidget {
       ),
     );
   }
-
 
     Widget _showReceivedMessage() {
     return ChatBubble(
