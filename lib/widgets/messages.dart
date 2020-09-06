@@ -23,7 +23,7 @@ class ChatMessageListItem extends StatelessWidget {
     return ChatBubble(
       clipper: ChatBubbleClipper1(type: BubbleType.sendBubble),
       alignment: Alignment.topRight,
-      margin: EdgeInsets.only(top: 20, right: 5),
+      margin: EdgeInsets.only(top: 20, right: 3),
       backGroundColor: Colors.blue,
       child: Container(
         constraints: BoxConstraints(
@@ -44,7 +44,7 @@ class ChatMessageListItem extends StatelessWidget {
     return ChatBubble(
       clipper: ChatBubbleClipper1(type: BubbleType.receiverBubble),
       backGroundColor: Color(0xffE7E7ED),
-      margin: EdgeInsets.only(top: 20, left: 5),
+      margin: EdgeInsets.only(top: 20, left: 3),
       child: Container(
         constraints: BoxConstraints(
         ),
