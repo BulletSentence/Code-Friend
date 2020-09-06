@@ -1,7 +1,11 @@
 import 'dart:math';
 
 import 'package:codefriend/models/chat_message.dart';
+import 'package:codefriend/views/Chat/chat_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_bubble/bubble_type.dart';
+import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_1.dart';
 
 class ChatMessageListItem extends StatelessWidget {
   final ChatMessage chatMessage;
@@ -16,27 +20,42 @@ class ChatMessageListItem extends StatelessWidget {
   }
 
   Widget _showSentMessage({EdgeInsets padding, TextAlign textAlign}) {
-    return ListTile(
-      contentPadding: EdgeInsets.fromLTRB(64.0, 0.0, 8.0, 0.0),
-      trailing: CircleAvatar(
-          radius: 30,
-          backgroundColor: Colors.black26,
-          backgroundImage: null),
-      title: Text(chatMessage.name, textAlign: TextAlign.right),
-      subtitle: Text(chatMessage.text, textAlign: TextAlign.right),
+    return ChatBubble(
+      clipper: ChatBubbleClipper1(type: BubbleType.sendBubble),
+      alignment: Alignment.topRight,
+      margin: EdgeInsets.only(top: 20, right: 5),
+      backGroundColor: Colors.blue,
+      child: Container(
+        constraints: BoxConstraints(
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(right: 5),
+          child: Text(
+           chatMessage.text,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
     );
   }
 
 
     Widget _showReceivedMessage() {
-    return ListTile(
-      contentPadding: EdgeInsets.fromLTRB(8.0, 0.0, 64.0, 0.0),
-      leading: CircleAvatar(
-          radius: 25,
-          backgroundImage: null,
+    return ChatBubble(
+      clipper: ChatBubbleClipper1(type: BubbleType.receiverBubble),
+      backGroundColor: Color(0xffE7E7ED),
+      margin: EdgeInsets.only(top: 20, left: 5),
+      child: Container(
+        constraints: BoxConstraints(
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 5),
+          child: Text(
+            chatMessage.text,
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
       ),
-      title: Text(chatMessage.name, textAlign: TextAlign.left),
-      subtitle: Text(chatMessage.text, textAlign: TextAlign.left),
     );
   }
 }
