@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:codefriend/models/chat_message.dart';
 import 'package:codefriend/views/Chat/chat_page.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +22,8 @@ class ChatMessageListItem extends StatelessWidget {
     return ChatBubble(
       clipper: ChatBubbleClipper1(type: BubbleType.sendBubble),
       alignment: Alignment.topRight,
+      backGroundColor: Color(0xffE7E7ED),
       margin: EdgeInsets.only(top: 20, right: 3),
-      backGroundColor: Colors.blue,
       child: Container(
         constraints: BoxConstraints(
         ),
@@ -32,18 +31,17 @@ class ChatMessageListItem extends StatelessWidget {
           padding: const EdgeInsets.only(right: 5),
           child: Text(
            chatMessage.text,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black87),
           ),
         ),
       ),
     );
   }
 
-
     Widget _showReceivedMessage() {
     return ChatBubble(
       clipper: ChatBubbleClipper1(type: BubbleType.receiverBubble),
-      backGroundColor: Color(0xffE7E7ED),
+      backGroundColor: Colors.amber,
       margin: EdgeInsets.only(top: 20, left: 3),
       child: Container(
         constraints: BoxConstraints(
@@ -52,7 +50,7 @@ class ChatMessageListItem extends StatelessWidget {
           padding: const EdgeInsets.only(left: 5),
           child: Text(
             chatMessage.text,
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.black87),
           ),
         ),
       ),
