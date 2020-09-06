@@ -28,8 +28,6 @@ talk about your day to day life, vent and feel heard.
 
 ---
 
-# Views 📱
-
 
 # Views 📱
 
@@ -63,8 +61,5 @@ talk about your day to day life, vent and feel heard.
 
 ---
 
-
-
----
 
 

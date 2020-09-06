@@ -59,9 +59,6 @@ class HomeHeader extends StatelessWidget {
                 )
               ],
             ),
-            RaisedButton(
-              elevation: 10,
-            ),
           ],
         ),
       ),

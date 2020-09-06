@@ -17,6 +17,7 @@ class RoundedPasswordField extends StatelessWidget {
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.only(top: 15),
           hintText: "Senha",
           icon: Icon(
             Icons.lock,
