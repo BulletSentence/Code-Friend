@@ -32,7 +32,7 @@ class Body extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.03),
             RoundedInputField(
-              hintText: "Seu Email",
+              hintText: "Email",
               onChanged: (value) {},
             ),
             RoundedPasswordField(
