@@ -108,7 +108,7 @@ class _ChatPageState extends State<ChatPage> {
         controller: _controllerText,
         textCapitalization: TextCapitalization.sentences,
         decoration: new InputDecoration.collapsed(
-          hintText: "Enviar",
+          hintText: "Digite uma mensagem",
         ),
       ),
     );
@@ -119,11 +119,11 @@ class _ChatPageState extends State<ChatPage> {
     return new Container(
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
-        color: Colors.yellow,
+        color: Colors.amber,
         ),
       margin: new EdgeInsets.only(left: 8.0),
       child: new IconButton(
-          icon: new Icon(Icons.send, color: Colors.white),
+          icon: new Icon(Icons.send, color: Colors.black54),
           onPressed: () {
             if (_controllerText.text.isNotEmpty) {
               _sendMessage(text: _controllerText.text);
@@ -135,7 +135,7 @@ class _ChatPageState extends State<ChatPage> {
   // Container com o texto e o icone
   Widget _buildUserInput() {
     return Container(
-      margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10),
+      margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
         color: Colors.white,
