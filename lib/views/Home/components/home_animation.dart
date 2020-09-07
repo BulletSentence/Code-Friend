@@ -1,4 +1,4 @@
-import 'package:codefriend/widgets/home_header.dart';
+import 'package:codefriend/views/Home/components/home_header.dart';
 import 'package:flutter/material.dart';
 
 class HomeAnimation extends StatelessWidget {

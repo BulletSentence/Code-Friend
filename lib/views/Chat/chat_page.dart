@@ -33,13 +33,6 @@ class _ChatPageState extends State<ChatPage> {
             Navigator.pop(context);
           },
         ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () => Exit_dialog(context),
-            icon: Icon(Icons.exit_to_app, color: Colors.black54),
-            tooltip: 'Close app',
-          )
-        ],
       ),
       body: Column(
         children: <Widget>[

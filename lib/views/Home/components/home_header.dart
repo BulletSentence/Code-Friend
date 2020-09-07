@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
@@ -12,11 +11,10 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-
     return Container(
       height: screenSize.height,
       decoration: BoxDecoration(
-        color: Colors.blue[800],
+        color: Colors.yellow[800],
       ),
       child: SafeArea(
         child: Column(
@@ -36,7 +34,7 @@ class HomeHeader extends StatelessWidget {
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       alignment: Alignment.bottomLeft,
-                      image: AssetImage("assets/avatar.jpg"),
+                      image: AssetImage("assets/profile/profile.jpg"),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -52,7 +50,7 @@ class HomeHeader extends StatelessWidget {
                       maxHeight: MediaQuery.of(context).size.height,
                     ),
                     child: Text(
-                      "Bom dia Bebezinho! Poderia me mandar o numero do seu cartão? :3",
+                      "Bom dia! Como foi seu dia?",
                       style: TextStyle(color: Colors.black),
                     ),
                   ),

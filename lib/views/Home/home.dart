@@ -1,4 +1,5 @@
-import 'package:codefriend/widgets/home_animation.dart';
+import 'package:codefriend/views/Home/components/home_animation.dart';
+import 'package:codefriend/widgets/popup_exit.dart';
 import 'package:flutter/material.dart';
 
 class HomeSreen extends StatefulWidget {
@@ -6,13 +7,15 @@ class HomeSreen extends StatefulWidget {
   _HomeSreenState createState() => _HomeSreenState();
 }
 
-class _HomeSreenState extends State<HomeSreen> with SingleTickerProviderStateMixin {
+class _HomeSreenState extends State<HomeSreen>
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 2000));
+    _controller = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 2000));
     _controller.forward();
   }
 
@@ -21,11 +24,31 @@ class _HomeSreenState extends State<HomeSreen> with SingleTickerProviderStateMix
     _controller.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    return HomeAnimation(
-      controller: _controller.view,
+    return Scaffold(
+      appBar: new AppBar(
+        backgroundColor: Colors.yellow[800],
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.settings),
+          color: Colors.black54,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () => Exit_dialog(context),
+            icon: Icon(Icons.exit_to_app, color: Colors.black54),
+            tooltip: 'Close app',
+          )
+        ],
+      ),
+      body: HomeAnimation(
+        controller: _controller.view,
+      ),
     );
   }
 }
