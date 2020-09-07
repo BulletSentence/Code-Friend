@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.amber,
         ),
-        home: WelcomeScreen(),
+        home: UserModel().isLoggedIn() ? HomeSreen() : WelcomeScreen(),
       ),
     );
   }

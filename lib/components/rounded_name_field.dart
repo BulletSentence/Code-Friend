@@ -23,6 +23,7 @@ class RoundedNameField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextFormField(
+        textCapitalization: TextCapitalization.sentences,
         controller: controller,
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
