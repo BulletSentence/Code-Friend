@@ -11,11 +11,24 @@ import 'package:flutter_svg/svg.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'or_divider.dart';
 
-class Body extends StatelessWidget {
+
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+
+  final _emailController = TextEditingController();
+  final _passController = TextEditingController();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
+      key: _scaffoldKey,
       child: SingleChildScrollView(
         child:ScopedModelDescendant<UserModel>(builder: (context, child, model) {
           if (model.isLoading)
@@ -33,15 +46,32 @@ class Body extends StatelessWidget {
                 height: size.height * 0.35,
               ),
               RoundedInputField(
+                controller: _emailController,
                 hintText: "Email",
-                onChanged: (value) {},
+                onChanged: (value) {
+                },
               ),
               RoundedPasswordField(
+                controller: _passController,
                 onChanged: (value) {},
               ),
               RoundedButton(
                 text: "CRIAR CONTA",
-                press: () {},
+                press: () {
+                  Map<String, dynamic> userData = {
+                    "email": _emailController.text,
+                  };
+
+                  print(_emailController.text);
+                  print(_passController.text);
+
+                  model.signUp(
+                      userData: userData,
+                      pass: _passController.text,
+                      onSuccess: _onSuccess,
+                      onFail: _onFail
+                  );
+                },
               ),
               SizedBox(height: size.height * 0.03),
               AlreadyHaveAnAccountCheck(
@@ -77,4 +107,28 @@ class Body extends StatelessWidget {
       ),
     );
   }
+
+  void _onSuccess(){
+    _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Usuário criado com sucesso!"),
+          backgroundColor: Theme.of(context).primaryColor,
+          duration: Duration(seconds: 2),
+        )
+    );
+    Future.delayed(Duration(seconds: 2)).then((_){
+      Navigator.of(context).pop();
+    });
+  }
+
+  void _onFail(){
+    _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Falha ao criar usuário!"),
+          backgroundColor: Colors.redAccent,
+          duration: Duration(seconds: 2),
+        )
+    );
+  }
+
 }
+
+
