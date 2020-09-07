@@ -8,7 +8,7 @@ void main() {
     theme: ThemeData(
       primarySwatch: Colors.amber,
     ),
-    home: HomeSreen(),
+    home: WelcomeScreen(),
   ));
 }
 

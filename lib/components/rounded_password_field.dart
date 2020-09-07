@@ -9,6 +9,7 @@ class RoundedPasswordField extends StatelessWidget {
     this.onChanged,
   }) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
@@ -23,9 +24,12 @@ class RoundedPasswordField extends StatelessWidget {
             Icons.lock,
             color: Colors.black54,
           ),
-          suffixIcon: Icon(
-            Icons.visibility,
+          suffixIcon: IconButton(
             color: Colors.black54,
+            icon: Icon(Icons.visibility),
+            onPressed: (){
+
+            },
           ),
           border: InputBorder.none,
         ),
