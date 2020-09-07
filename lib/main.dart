@@ -10,6 +10,7 @@ void main() {
     model: UserModel(),
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "LorelA.I.",
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
