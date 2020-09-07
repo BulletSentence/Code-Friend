@@ -28,3 +28,4 @@ flutter:
     - assets/credentials.json
     - assets/icons/
     - assets/images/
+    - assets/profile/
