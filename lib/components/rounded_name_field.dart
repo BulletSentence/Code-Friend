@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:codefriend/components/text_field_container.dart';
 import 'package:codefriend/constants.dart';
 
-class RoundedInputField extends StatelessWidget {
+class RoundedNameField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
   final TextEditingController controller;
 
-  const RoundedInputField({
+  const RoundedNameField({
     Key key,
     this.controller,
     this.hintText,

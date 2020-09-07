@@ -1,8 +1,10 @@
 import 'package:codefriend/components/already_have_an_account_acheck.dart';
 import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/components/rounded_input_field.dart';
+import 'package:codefriend/components/rounded_name_field.dart';
 import 'package:codefriend/components/rounded_password_field.dart';
 import 'package:codefriend/models/user_model.dart';
+import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
 import 'package:codefriend/views/Signup/components/social_icon.dart';
@@ -23,6 +25,7 @@ class _BodyState extends State<Body> {
 
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
+  final _nameController = TextEditingController();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
 
@@ -47,6 +50,12 @@ class _BodyState extends State<Body> {
                 "assets/icons/create.svg",
                 height: size.height * 0.35,
               ),
+              RoundedNameField(
+                controller: _nameController,
+                hintText: "Your Name",
+                onChanged: (value) {
+                },
+              ),
               RoundedInputField(
                 controller: _emailController,
                 hintText: "Email",
@@ -62,10 +71,12 @@ class _BodyState extends State<Body> {
                 press: () {
                   Map<String, dynamic> userData = {
                     "email": _emailController.text,
+                    "name": _nameController.text,
                   };
 
                   print(_emailController.text);
                   print(_passController.text);
+                  print(_nameController.text);
 
                   model.signUp(
                       userData: userData,
@@ -89,20 +100,6 @@ class _BodyState extends State<Body> {
                   );
                 },
               ),
-              OrDivider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  SocalIcon(
-                    iconSrc: "assets/icons/facebook.svg",
-                    press: () {},
-                  ),
-                  SocalIcon(
-                    iconSrc: "assets/icons/google-plus.svg",
-                    press: () {},
-                  ),
-                ],
-              )
             ],
           );
         }),
@@ -120,7 +117,7 @@ class _BodyState extends State<Body> {
         context,
         MaterialPageRoute(
           builder: (context) {
-            return LoginScreen();
+            return HomeSreen();
           },
         ),
       );
