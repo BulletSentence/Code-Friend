@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "795672699181",
+    "firebase_url": "https://talkbuddy-ymdv.firebaseio.com",
+    "project_id": "talkbuddy-ymdv",
+    "storage_bucket": "talkbuddy-ymdv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795672699181:android:24598b0d2f0ac8097e73a4",
+        "android_client_info": {
+          "package_name": "br.com.bs.codefriend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795672699181-1j8ib4b5nbcfbukpraf19ljt30956ljr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCssWJpkKhPIET2WeWnQvzZ7Q19JZNuhII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795672699181-1j8ib4b5nbcfbukpraf19ljt30956ljr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
