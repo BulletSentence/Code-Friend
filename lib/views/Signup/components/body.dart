@@ -6,6 +6,8 @@ import 'package:codefriend/models/user_model.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
 import 'package:codefriend/views/Signup/components/social_icon.dart';
+import 'package:codefriend/widgets/error_exit.dart';
+import 'package:codefriend/widgets/ok_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -109,24 +111,24 @@ class _BodyState extends State<Body> {
   }
 
   void _onSuccess(){
-    _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Usuário criado com sucesso!"),
-          backgroundColor: Theme.of(context).primaryColor,
-          duration: Duration(seconds: 2),
-        )
-    );
-    Future.delayed(Duration(seconds: 2)).then((_){
+    Ok_dialog(context);
+    Future.delayed(Duration(seconds: 3)).then((_){
       Navigator.of(context).pop();
+      _passController.clear();
+      _emailController.clear();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return LoginScreen();
+          },
+        ),
+      );
     });
   }
 
   void _onFail(){
-    _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Falha ao criar usuário!"),
-          backgroundColor: Colors.redAccent,
-          duration: Duration(seconds: 2),
-        )
-    );
+    Error_dialog(context);
   }
 
 }
