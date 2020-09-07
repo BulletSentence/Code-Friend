@@ -8,6 +8,7 @@ import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:codefriend/widgets/error_exit.dart';
+import 'package:codefriend/widgets/incorrect_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -102,7 +103,7 @@ class _BodyState extends State<Body> {
   }
 
   void _onFail(){
-    Error_dialog(context);
+    Incorrect_dialog(context);
   }
 
 }

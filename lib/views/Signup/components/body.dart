@@ -52,7 +52,7 @@ class _BodyState extends State<Body> {
               ),
               RoundedNameField(
                 controller: _nameController,
-                hintText: "Your Name",
+                hintText: "Seu nome",
                 onChanged: (value) {
                 },
               ),
@@ -73,10 +73,6 @@ class _BodyState extends State<Body> {
                     "email": _emailController.text,
                     "name": _nameController.text,
                   };
-
-                  print(_emailController.text);
-                  print(_passController.text);
-                  print(_nameController.text);
 
                   model.signUp(
                       userData: userData,
