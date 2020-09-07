@@ -7,15 +7,21 @@ import 'package:codefriend/views/Chat/chat_page.dart';
 import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
+import 'package:codefriend/widgets/error_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-class Body extends StatelessWidget {
-  const Body({
-    Key key,
-  }) : super(key: key);
 
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+final _emailController = TextEditingController();
+final _passController = TextEditingController();
+
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -43,23 +49,22 @@ class Body extends StatelessWidget {
                 ),
                 SizedBox(height: size.height * 0.03),
                 RoundedInputField(
+                  controller: _emailController,
                   hintText: "Email",
                   onChanged: (value) {},
                 ),
                 RoundedPasswordField(
+                  controller: _passController,
                   onChanged: (value) {},
                 ),
                 RoundedButton(
                   text: "ENTRAR",
                   press: () {
-                    model.signIn();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return HomeSreen();
-                        },
-                      ),
+                    model.signIn(
+                        email: _emailController.text,
+                        pass: _passController.text,
+                        onSuccess: _onSuccess,
+                        onFail: _onFail
                     );
                   },
                 ),
@@ -83,4 +88,13 @@ class Body extends StatelessWidget {
       ),
     );
   }
+
+  void _onSuccess(){
+    Navigator.of(context).pop();
+  }
+
+  void _onFail(){
+    Error_dialog(context);
+  }
+
 }

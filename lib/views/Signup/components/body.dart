@@ -111,8 +111,6 @@ class _BodyState extends State<Body> {
     Ok_dialog(context);
     Future.delayed(Duration(seconds: 3)).then((_){
       Navigator.of(context).pop();
-      _passController.clear();
-      _emailController.clear();
       Navigator.push(
         context,
         MaterialPageRoute(
