@@ -25,8 +25,10 @@ class Body extends StatelessWidget {
           builder: (context, child, model) {
             if (model.isLoading)
               return Center(child: CircularProgressIndicator(
-                strokeWidth: 1,
-              ), );
+              ),
+                heightFactor: 10,
+                widthFactor: 10,
+              );
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
