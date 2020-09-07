@@ -53,6 +53,14 @@ class Body extends StatelessWidget {
                   text: "ENTRAR",
                   press: () {
                     model.signIn();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ChatPage();
+                        },
+                      ),
+                    );
                   },
                 ),
                 SizedBox(height: size.height * 0.03),
