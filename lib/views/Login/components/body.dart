@@ -9,6 +9,8 @@ import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:codefriend/widgets/error_exit.dart';
 import 'package:codefriend/widgets/incorrect_exit.dart';
+import 'package:codefriend/widgets/recoverError_exit.dart';
+import 'package:codefriend/widgets/recover_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -70,6 +72,22 @@ class _BodyState extends State<Body> {
                   },
                 ),
                 SizedBox(height: size.height * 0.03),
+                FlatButton(
+                  child: Text(
+                  "Esqueceu a senha? Clique aqui",
+                    style: TextStyle(
+                      color: Colors.black54,
+                    ),
+                  ),
+                  onPressed: (){
+                    if(_emailController.text.isEmpty)
+                     RecoverError_dialog(context);
+                    else {
+                      model.recoverPass(_emailController.text);
+                      Recover_dialog(context);
+                    }
+                  },
+                ),
                 AlreadyHaveAnAccountCheck(
                   press: () {
                     Navigator.push(

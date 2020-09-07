@@ -20,10 +20,16 @@ dependencies:
   firebase_core: ^0.4.0
   firebase_auth: ^0.11.1
   cloud_firestore: ^0.11.0+2
+  flutter_launcher_icons: ^0.7.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/launcher/lau.png"
 
 flutter:
   uses-material-design: true
@@ -33,3 +39,4 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/profile/
+    - assets/launcher/
