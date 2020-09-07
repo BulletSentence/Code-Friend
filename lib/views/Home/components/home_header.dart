@@ -1,3 +1,5 @@
+import 'package:codefriend/views/Chat/chat_page.dart';
+import 'package:codefriend/views/Home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
@@ -57,6 +59,25 @@ class HomeHeader extends StatelessWidget {
                 )
               ],
             ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 50),
+                child: RaisedButton(
+                  color: Colors.white70,
+                  child: Text(
+                    "Conversar",
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ChatPage();
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
           ],
         ),
       ),
