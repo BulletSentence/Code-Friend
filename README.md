@@ -1,4 +1,5 @@
 # Code Friend 😍
+
 A recurring problem these days is that we are always connected and
 receiving information in an unbridled way, but the problem of remaining long
 periods in this heap of information is that we distance ourselves from human interactions,
