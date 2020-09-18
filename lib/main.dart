@@ -10,15 +10,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScopedModel<UserModel>(
-      model: UserModel(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "LorelA.I.",
-        theme: ThemeData(
-          primarySwatch: Colors.amber,
-        ),
-        home: UserModel().isLoggedIn() ? HomeSreen() : WelcomeScreen(),
-      ),
-    );
+        model: UserModel(),
+        child:
+            ScopedModelDescendant<UserModel>(builder: (context, child, model) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: "LorelA.I.",
+            theme: ThemeData(
+              primarySwatch: Colors.amber,
+            ),
+            home: UserModel().isLoggedIn() ? HomeSreen() : WelcomeScreen(),
+          );
+        }));
   }
 }

@@ -27,27 +27,29 @@ class _HomeSreenState extends State<HomeSreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: new AppBar(
-        backgroundColor: Colors.yellow[800],
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.settings),
-          color: Colors.black54,
-          onPressed: () {
-            Navigator.pop(context);
-          },
+    return Center(
+      child: Scaffold(
+        appBar: new AppBar(
+          backgroundColor: Colors.yellow[800],
+          elevation: 0,
+          leading: IconButton(
+            icon: Icon(Icons.settings),
+            color: Colors.black54,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () => Exit_dialog(context),
+              icon: Icon(Icons.exit_to_app, color: Colors.black54),
+              tooltip: 'Close app',
+            )
+          ],
         ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () => Exit_dialog(context),
-            icon: Icon(Icons.exit_to_app, color: Colors.black54),
-            tooltip: 'Close app',
-          )
-        ],
-      ),
-      body: HomeAnimation(
-        controller: _controller.view,
+        body: HomeAnimation(
+          controller: _controller.view,
+        ),
       ),
     );
   }

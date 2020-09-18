@@ -13,7 +13,7 @@ Incorrect_dialog(BuildContext context) {
   //configura o AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Erro ao Entrar"),
-    content: Text("O email ou senha incorretos"),
+    content: Text("O email ou senha incorreto"),
     actions: [
       cancelaButton,
     ],
