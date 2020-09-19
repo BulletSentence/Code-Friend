@@ -108,6 +108,4 @@ class UserModel extends Model {
     }
     notifyListeners();
   }
-
-
 }

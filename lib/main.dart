@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.amber,
           ),
-          home: UserModel().loadCurrentUser().toString().isNotEmpty ? HomeSreen() : WelcomeScreen(),
+          home: UserModel().firebaseUser == null ? WelcomeScreen() : HomeSreen(),
         ));
   }
 }
