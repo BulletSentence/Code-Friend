@@ -20,7 +20,7 @@ class UserModel extends Model {
   void addListener(VoidCallback listener) {
     super.addListener(listener);
 
-    _loadCurrentUser();
+    loadCurrentUser();
   }
 
   void signUp({@required Map<String, dynamic> userData, @required String pass,
@@ -58,7 +58,7 @@ class UserModel extends Model {
             (user) async {
           firebaseUser = user;
 
-          await _loadCurrentUser();
+          await loadCurrentUser();
 
           onSuccess();
           isLoading = false;
@@ -86,6 +86,9 @@ class UserModel extends Model {
   }
 
   bool isLoggedIn(){
+    loadCurrentUser();
+    notifyListeners();
+    print("IsLoggedin: "+firebaseUser.toString());
     return firebaseUser != null;
   }
 
@@ -94,7 +97,7 @@ class UserModel extends Model {
     await Firestore.instance.collection("users").document(firebaseUser.uid).setData(userData);
   }
 
-  Future<Null> _loadCurrentUser() async {
+  Future<Null> loadCurrentUser() async {
     if(firebaseUser == null)
       firebaseUser = await _auth.currentUser();
     if(firebaseUser != null){
@@ -102,10 +105,9 @@ class UserModel extends Model {
         DocumentSnapshot docUser =
         await Firestore.instance.collection("users").document(firebaseUser.uid).get();
         userData = docUser.data;
+        print("Loaduser: "+firebaseUser.toString());
       }
     }
     notifyListeners();
   }
-
-
 }

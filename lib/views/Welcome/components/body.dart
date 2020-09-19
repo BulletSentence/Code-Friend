@@ -2,15 +2,17 @@ import 'dart:math';
 
 import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/constants.dart';
+import 'package:codefriend/models/user_model.dart';
+import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 import 'background.dart';
 
 class Body extends StatelessWidget {
-
   dynamic listImagesnotFound = [
     "assets/icons/welcome0.svg",
     "assets/icons/welcome1.svg",
@@ -24,13 +26,12 @@ class Body extends StatelessWidget {
   ];
   Random rnd;
 
-
   String img() {
     int min = 0;
-    int max = listImagesnotFound.length-1;
+    int max = listImagesnotFound.length - 1;
     rnd = new Random();
     int r = min + rnd.nextInt(max - min);
-    String image_name  = listImagesnotFound[r].toString();
+    String image_name = listImagesnotFound[r].toString();
     return image_name;
   }
 
@@ -38,54 +39,67 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     // This size provide us total height and width of our screen
-    return Background(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Bem-Vindo, Como está?',
-              style: TextStyle(
-                fontSize: 20,
+    return ScopedModelDescendant<UserModel>(builder: (context, child, model) {
+      return Background(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Bem-Vindo, Como está?',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            SvgPicture.asset(img(),
-              height: size.height * 0.45,
-            ),
-            SizedBox(height: size.height * 0.05),
-            RoundedButton(
-              text: "ENTRAR",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LoginScreen();
-                    },
-                  ),
-                );
-              },
-            ),
-            RoundedButton(
-              text: "CRIAR CONTA",
-              color: kPrimaryLightColor,
-              textColor: Colors.black,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return SignUpScreen();
-                    },
-                  ),
-                );
-              },
-            ),
-          ],
+              SizedBox(height: 10),
+              SvgPicture.asset(
+                img(),
+                height: size.height * 0.45,
+              ),
+              SizedBox(height: size.height * 0.05),
+              RoundedButton(
+                text: "ENTRAR",
+                press: () {
+                  if (UserModel().isLoggedIn()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomeSreen();
+                        },
+                      ),
+                    );
+                  } else {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen();
+                        },
+                      ),
+                    );
+                  }
+                },
+              ),
+              RoundedButton(
+                text: "CRIAR CONTA",
+                color: kPrimaryLightColor,
+                textColor: Colors.black,
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SignUpScreen();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
-
 }

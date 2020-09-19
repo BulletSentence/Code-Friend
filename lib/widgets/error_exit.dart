@@ -13,7 +13,7 @@ Error_dialog(BuildContext context) {
   //configura o AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Erro ao criar conta"),
-    content: Text("O email já existe ou está incorreto"),
+    content: Text("O email já existe ou está incorreto, sua senha também deve ter mais de 6 digitos"),
     actions: [
       cancelaButton,
     ],
