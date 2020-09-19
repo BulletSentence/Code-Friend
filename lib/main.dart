@@ -11,16 +11,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScopedModel<UserModel>(
         model: UserModel(),
-        child:
-            ScopedModelDescendant<UserModel>(builder: (context, child, model) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: "LorelA.I. Chat",
-            theme: ThemeData(
-              primarySwatch: Colors.amber,
-            ),
-            home: UserModel().isLoggedIn() ? HomeSreen() : WelcomeScreen(),
-          );
-        }));
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: "LorelA.I. Chat",
+          theme: ThemeData(
+            primarySwatch: Colors.amber,
+          ),
+          home: UserModel().loadCurrentUser().toString().isNotEmpty ? HomeSreen() : WelcomeScreen(),
+        ));
   }
 }
