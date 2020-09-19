@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/constants.dart';
 import 'package:codefriend/models/user_model.dart';
+import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -59,14 +60,25 @@ class Body extends StatelessWidget {
               RoundedButton(
                 text: "ENTRAR",
                 press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return LoginScreen();
-                      },
-                    ),
-                  );
+                  if (UserModel().isLoggedIn()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomeSreen();
+                        },
+                      ),
+                    );
+                  } else {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen();
+                        },
+                      ),
+                    );
+                  }
                 },
               ),
               RoundedButton(

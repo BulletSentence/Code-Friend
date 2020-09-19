@@ -86,6 +86,8 @@ class UserModel extends Model {
   }
 
   bool isLoggedIn(){
+    loadCurrentUser();
+    notifyListeners();
     print("IsLoggedin: "+firebaseUser.toString());
     return firebaseUser != null;
   }

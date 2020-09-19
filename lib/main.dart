@@ -1,6 +1,7 @@
 import 'package:codefriend/models/user_model.dart';
 import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Welcome/welcome_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.amber,
           ),
-          home: UserModel().firebaseUser == null ? WelcomeScreen() : HomeSreen(),
+          home: UserModel().isLoggedIn() ? WelcomeScreen() : WelcomeScreen()
         ));
   }
 }
