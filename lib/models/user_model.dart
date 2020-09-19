@@ -22,7 +22,7 @@ class UserModel extends Model {
 
     _loadCurrentUser();
   }
-  
+
   void signUp({@required Map<String, dynamic> userData, @required String pass,
     @required VoidCallback onSuccess, @required VoidCallback onFail}){
 

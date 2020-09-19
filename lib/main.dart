@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
             ScopedModelDescendant<UserModel>(builder: (context, child, model) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: "LorelA.I.",
+            title: "LorelA.I. Chat",
             theme: ThemeData(
               primarySwatch: Colors.amber,
             ),
