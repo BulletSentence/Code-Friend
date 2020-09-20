@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:codefriend/models/user_model.dart';
 import 'package:codefriend/tiles/drawer_tile.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -62,14 +63,17 @@ class CustomDrawer extends StatelessWidget {
                               ),
                               SizedBox(height: 10),
                               GestureDetector(
-                                child: Text(
-                                  !model.isLoggedIn() ? "Entrar >" : "Sair",
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: kScaffoldBackgroundColor,
+
+                                  child: Text(
+                                    !model.isLoggedIn() ? "Entrar >" : "Sair",
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red,
+                                    ),
                                   ),
-                                ),
+                                
+
                                 onTap: () {
                                   if (!model.isLoggedIn())
                                     Navigator.of(context).push(
