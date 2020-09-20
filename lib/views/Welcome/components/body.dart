@@ -1,9 +1,8 @@
 import 'dart:math';
-
 import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/constants.dart';
 import 'package:codefriend/models/user_model.dart';
-import 'package:codefriend/views/Home/home.dart';
+import 'package:codefriend/screens/headers_screen.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +23,9 @@ class Body extends StatelessWidget {
     "assets/icons/welcome8.svg",
     "assets/icons/welcome9.svg",
   ];
-  Random rnd;
 
   String img() {
+    Random rnd;
     int min = 0;
     int max = listImagesnotFound.length - 1;
     rnd = new Random();
@@ -46,39 +45,29 @@ class Body extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Bem-Vindo, Como está?',
+                'Bem-Vindo, Como está? ',
                 style: TextStyle(
                   fontSize: 20,
                 ),
               ),
               SizedBox(height: 10),
               SvgPicture.asset(
-                img(),
+                "assets/icons/welcome1.svg",
                 height: size.height * 0.45,
               ),
               SizedBox(height: size.height * 0.05),
               RoundedButton(
                 text: "ENTRAR",
                 press: () {
-                  if (UserModel().isLoggedIn()) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return HomeSreen();
-                        },
-                      ),
-                    );
-                  } else {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return LoginScreen();
-                        },
-                      ),
-                    );
-                  }
+                  Navigator.of(context).pop();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LoginScreen();
+                      },
+                    ),
+                  );
                 },
               ),
               RoundedButton(
@@ -86,6 +75,7 @@ class Body extends StatelessWidget {
                 color: kPrimaryLightColor,
                 textColor: Colors.black,
                 press: () {
+                  Navigator.of(context).pop();
                   Navigator.push(
                     context,
                     MaterialPageRoute(

@@ -4,10 +4,9 @@ import 'package:codefriend/components/rounded_input_field.dart';
 import 'package:codefriend/components/rounded_name_field.dart';
 import 'package:codefriend/components/rounded_password_field.dart';
 import 'package:codefriend/models/user_model.dart';
-import 'package:codefriend/views/Home/home.dart';
+import 'package:codefriend/screens/headers_screen.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
-import 'package:codefriend/views/Signup/components/social_icon.dart';
 import 'package:codefriend/widgets/error_exit.dart';
 import 'package:codefriend/widgets/ok_exit.dart';
 import 'package:flutter/material.dart';
@@ -86,6 +85,7 @@ class _BodyState extends State<Body> {
               AlreadyHaveAnAccountCheck(
                 login: false,
                 press: () {
+                  Navigator.of(context).pop();
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -111,7 +111,7 @@ class _BodyState extends State<Body> {
         context,
         MaterialPageRoute(
           builder: (context) {
-            return HomeSreen();
+            return HomeScreen();
           },
         ),
       );

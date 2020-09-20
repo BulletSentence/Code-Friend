@@ -1,5 +1,7 @@
-import 'package:codefriend/views/Home/components/home_header.dart';
+
 import 'package:flutter/material.dart';
+
+import 'landing_header.dart';
 
 class HomeAnimation extends StatelessWidget {
 
@@ -16,7 +18,6 @@ class HomeAnimation extends StatelessWidget {
 
   Widget _buildAnimation(BuildContext context, Widget child){
     return ListView(
-      padding: EdgeInsets.zero,
       children: <Widget>[
         HomeHeader(
           containerGrow: containerGrow,
