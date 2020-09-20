@@ -14,3 +14,10 @@ class HexColor extends Color {
 
 const kPrimaryColor = Color(0xFFFFC107);
 const kPrimaryLightColor = Color(0x300745FF);
+
+const kInputFieldFillColor = const Color.fromARGB(255, 241, 239, 239);
+const kBoxFormPadding = const EdgeInsets.symmetric(horizontal: 10, vertical: 20);
+const kFormPadding = const EdgeInsets.symmetric(vertical: 10, horizontal: 20);
+const kScaffoldBackgroundColor = const Color.fromARGB(255, 241, 239, 239);
+const kTextColor = Colors.black54;
+

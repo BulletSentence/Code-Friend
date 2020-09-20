@@ -90,6 +90,7 @@ class _BodyState extends State<Body> {
                 ),
                 AlreadyHaveAnAccountCheck(
                   press: () {
+                    Navigator.of(context).pop();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -110,14 +111,6 @@ class _BodyState extends State<Body> {
 
   void _onSuccess(){
     Navigator.of(context).pop();
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return HomeSreen();
-        },
-      ),
-    );
   }
 
   void _onFail(){

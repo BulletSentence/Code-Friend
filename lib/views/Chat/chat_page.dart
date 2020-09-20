@@ -22,25 +22,12 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: new AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black54,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: Column(
+    return Column(
         children: <Widget>[
           _buildList(),
           _buildUserInput(),
         ],
-      ),
-    );
+      );
   }
 
   // Cria a lista com as mensagens
