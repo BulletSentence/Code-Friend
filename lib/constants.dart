@@ -12,7 +12,7 @@ class HexColor extends Color {
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
 
-const kPrimaryColor = Color(0xFFFFC107);
+const kPrimaryColor = Colors.amber;
 const kPrimaryLightColor = Color(0x300745FF);
 
 const kInputFieldFillColor = const Color.fromARGB(255, 241, 239, 239);

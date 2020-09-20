@@ -3,8 +3,8 @@ import 'package:codefriend/components/rounded_button.dart';
 import 'package:codefriend/components/rounded_input_field.dart';
 import 'package:codefriend/components/rounded_password_field.dart';
 import 'package:codefriend/models/user_model.dart';
+import 'package:codefriend/screens/headers_screen.dart';
 import 'package:codefriend/views/Chat/chat_page.dart';
-import 'package:codefriend/views/Home/home.dart';
 import 'package:codefriend/views/Login/components/background.dart';
 import 'package:codefriend/views/Signup/signup_screen.dart';
 import 'package:codefriend/widgets/error_exit.dart';
@@ -111,6 +111,14 @@ class _BodyState extends State<Body> {
 
   void _onSuccess(){
     Navigator.of(context).pop();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return HomeScreen();
+        },
+      ),
+    );
   }
 
   void _onFail(){

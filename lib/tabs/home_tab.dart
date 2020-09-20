@@ -1,4 +1,5 @@
 import 'package:codefriend/constants.dart';
+import 'package:codefriend/views/Landing/landing.dart';
 import 'package:flutter/material.dart';
 
 
@@ -15,7 +16,8 @@ class HomeTab extends StatelessWidget {
               snap: true,
             ),
           ],
-        )
+        ),
+
       ],
     );
   }

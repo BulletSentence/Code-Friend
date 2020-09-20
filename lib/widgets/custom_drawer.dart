@@ -18,7 +18,6 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget _buildDrawerBack() => Container(color: kPrimaryColor);
-
     return Drawer(
       elevation: 0,
       child: Stack(
