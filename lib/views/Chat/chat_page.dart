@@ -5,6 +5,8 @@ import 'package:codefriend/widgets/popup_exit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
+import '../../constants.dart';
+
 class ChatPage extends StatefulWidget {
   @override
   _ChatPageState createState() => _ChatPageState();
@@ -131,7 +133,7 @@ class _ChatPageState extends State<ChatPage> {
       margin: new EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25.0),
-        color: Colors.white,
+        color: kInputFieldFillColor,
         border: Border.all(
           color: Colors.grey,
           width: 1,
