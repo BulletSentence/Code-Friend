@@ -79,6 +79,7 @@ class CustomDrawer extends StatelessWidget {
                                       ),
                                     );
                                   else
+                                    Navigator.of(context).pop();
                                     model.signOut();
                                 },
                               )

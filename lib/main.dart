@@ -41,31 +41,35 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+
 Widget _introScreen() {
-  return Stack(
-    children: <Widget>[
-      SplashScreen(
-        seconds: 3,
-        gradientBackground: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Color.fromARGB(255, 115, 198, 182),
-            Color.fromARGB(255, 69, 179, 157)
-          ],
+  return ScopedModelDescendant<UserModel>(builder: (context, child, model) {
+    "${!model.isLoggedIn() ? "" : model.userData["name"]}";
+    return Stack(
+      children: <Widget>[
+        SplashScreen(
+          seconds: 3,
+          gradientBackground: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color.fromARGB(255, 115, 198, 182),
+              Color.fromARGB(255, 69, 179, 157)
+            ],
+          ),
+          navigateAfterSeconds: HomeScreen(),
+          loaderColor: Colors.transparent,
         ),
-        navigateAfterSeconds: HomeScreen(),
-        loaderColor: Colors.transparent,
-      ),
-      Container(
-        child: Center(
-          child: Container(
-            width: 300,
-            height: 300,
-            child: Image.asset("assets/launcher/lau.png"),
+        Container(
+          child: Center(
+            child: Container(
+              width: 300,
+              height: 300,
+              child: Image.asset("assets/launcher/lau.png"),
+            ),
           ),
         ),
-      ),
-    ],
-  );
+      ],
+    );
+  });
 }

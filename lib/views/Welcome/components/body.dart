@@ -24,9 +24,9 @@ class Body extends StatelessWidget {
     "assets/icons/welcome8.svg",
     "assets/icons/welcome9.svg",
   ];
-  Random rnd;
 
   String img() {
+    Random rnd;
     int min = 0;
     int max = listImagesnotFound.length - 1;
     rnd = new Random();
@@ -46,14 +46,14 @@ class Body extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Bem-Vindo, Como está?',
+                'Bem-Vindo, Como está? ',
                 style: TextStyle(
                   fontSize: 20,
                 ),
               ),
               SizedBox(height: 10),
               SvgPicture.asset(
-                img(),
+                "assets/icons/welcome1.svg",
                 height: size.height * 0.45,
               ),
               SizedBox(height: size.height * 0.05),
