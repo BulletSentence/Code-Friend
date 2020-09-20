@@ -63,17 +63,14 @@ class CustomDrawer extends StatelessWidget {
                               ),
                               SizedBox(height: 10),
                               GestureDetector(
-
-                                  child: Text(
+                                  child:!model.isLoggedIn() ? Text(
                                     !model.isLoggedIn() ? "Entrar >" : "Sair",
                                     style: TextStyle(
                                       fontSize: 16.0,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.red,
+                                      color: Colors.white70,
                                     ),
-                                  ),
-                                
-
+                                  ) : Icon(Icons.exit_to_app, color: Colors.white70,),
                                 onTap: () {
                                   if (!model.isLoggedIn())
                                     Navigator.of(context).push(

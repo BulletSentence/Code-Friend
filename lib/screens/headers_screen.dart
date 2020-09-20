@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   centerTitle: true,
                 ),
                 drawer: CustomDrawer(_pageController),
-                body: ChatPage(),
+                body: model.isLoggedIn() ? ChatPage() : WelcomeScreen(),
               ),
               Scaffold(
                 appBar: AppBar(
