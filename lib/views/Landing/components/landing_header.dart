@@ -14,78 +14,67 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    return ScopedModelDescendant<UserModel>(
-      builder: (context, child, model){
-          return Container(
-            height: screenSize.height,
-            decoration: BoxDecoration(
-              color: Colors.yellow[800],
+    return ScopedModelDescendant<UserModel>(builder: (context, child, model) {
+      return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(
+              height: 50,
             ),
-            child: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        alignment: Alignment.center,
-                        width: containerGrow.value * 120,
-                        height: containerGrow.value * 120,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            alignment: Alignment.bottomLeft,
-                            image: AssetImage("assets/profile/profile.jpg"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      ChatBubble(
-                        clipper: ChatBubbleClipper4(type: BubbleType.receiverBubble),
-                        backGroundColor: Color(0xffE7E7ED),
-                        margin: EdgeInsets.only(bottom: 80, right: 10, left: 10),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          constraints: BoxConstraints(
-                            maxWidth: MediaQuery.of(context).size.width * 0.3,
-                            maxHeight: MediaQuery.of(context).size.height,
-                          ),
-                          child: Text(
-                            "Bom dia ${model.userData['name']} Como foi seu dia?",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 50),
-                    child: RaisedButton(
-                      color: Colors.white70,
-                      child: Text(
-                        "Conversar",
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return ChatPage();
-                            },
-                          ),
-                        );
-                      },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  alignment: Alignment.center,
+                  width: containerGrow.value * 120,
+                  height: containerGrow.value * 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      alignment: Alignment.bottomLeft,
+                      image: AssetImage("assets/profile/profile.jpg"),
+                      fit: BoxFit.cover,
                     ),
                   ),
-                ],
+                ),
+                ChatBubble(
+                  clipper: ChatBubbleClipper4(type: BubbleType.receiverBubble),
+                  backGroundColor: Color(0xffE7E7ED),
+                  margin: EdgeInsets.only(bottom: 80, right: 10, left: 10),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width * 0.3,
+                      maxHeight: MediaQuery.of(context).size.height,
+                    ),
+                    child: Text(
+                      "Bom dia ${model.userData['name']} Como foi seu dia?",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 50),
+              child: RaisedButton(
+                color: Colors.white70,
+                child: Text(
+                  "Conversar",
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ChatPage();
+                      },
+                    ),
+                  );
+                },
               ),
             ),
-        );
-      }
-    );
+          ]);
+    });
   }
 }

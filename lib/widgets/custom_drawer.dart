@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:codefriend/models/user_model.dart';
 import 'package:codefriend/tiles/drawer_tile.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
+import 'package:codefriend/widgets/popup_exit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';

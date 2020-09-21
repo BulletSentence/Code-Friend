@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
             title: "Ticket IF",
             theme: ThemeData(
-              primaryColor: Colors.teal,
+              primaryColor: Colors.amber,
               scaffoldBackgroundColor: kScaffoldBackgroundColor,
             ),
             debugShowCheckedModeBanner: false,
@@ -49,14 +49,7 @@ Widget _introScreen() {
       children: <Widget>[
         SplashScreen(
           seconds: 3,
-          gradientBackground: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color.fromARGB(255, 115, 198, 182),
-              Color.fromARGB(255, 69, 179, 157)
-            ],
-          ),
+         backgroundColor: Colors.amber,
           navigateAfterSeconds: HomeScreen(),
           loaderColor: Colors.transparent,
         ),
