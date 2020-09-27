@@ -106,6 +106,6 @@ class UserModel extends Model {
         userData = docUser.data;
       }
     }
-    notifyListeners( );
+    notifyListeners();
   }
 }
