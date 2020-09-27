@@ -30,11 +30,7 @@ class HomeHeader extends StatelessWidget {
                   height: containerGrow.value * 120,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(
-                      alignment: Alignment.bottomLeft,
-                      image: AssetImage("assets/profile/profile.jpg"),
-                      fit: BoxFit.cover,
-                    ),
+                    color: Colors.amber,
                   ),
                 ),
                 ChatBubble(
