@@ -88,7 +88,6 @@ class UserModel extends Model {
   bool isLoggedIn(){
     loadCurrentUser();
     notifyListeners();
-    print("IsLoggedin: "+firebaseUser.toString());
     return firebaseUser != null;
   }
 
@@ -105,7 +104,6 @@ class UserModel extends Model {
         DocumentSnapshot docUser =
         await Firestore.instance.collection("users").document(firebaseUser.uid).get();
         userData = docUser.data;
-        print("Loaduser: "+firebaseUser.toString());
       }
     }
     notifyListeners();

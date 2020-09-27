@@ -95,8 +95,8 @@ class CustomDrawer extends StatelessWidget {
               Divider(color: Colors.transparent),
               DrawerTile(Icons.home, "Home", pageController, 0),
               DrawerTile(Icons.chat, "Conversar", pageController, 1),
-              DrawerTile(Icons.book, "Agenda", pageController, 2),
-              DrawerTile(Icons.whatshot, "Desafios Diários", pageController, 3),
+              //DrawerTile(Icons.book, "Agenda", pageController, 2),
+              //DrawerTile(Icons.whatshot, "Desafios Diários", pageController, 3),
             ],
           )
         ],

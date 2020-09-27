@@ -15,13 +15,17 @@ dependencies:
   flare_flutter: ^2.0.6
   flutter_chat_bubble: ^1.0.2
   flutter_auth_buttons: ^0.9.0
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.19.0
   scoped_model: ^1.0.1
   firebase_core: ^0.4.0
   firebase_auth: ^0.11.1
   cloud_firestore: ^0.11.0+2
   flutter_launcher_icons: ^0.7.5
   splashscreen: ^1.2.0
+  image_picker: ^0.5.0+3
+  firebase_storage: ^3.0.0
+  cloud_functions: ^0.3.0
+  transparent_image: ^0.1.0
 
 dev_dependencies:
   flutter_test:
