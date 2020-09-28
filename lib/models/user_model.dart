@@ -104,8 +104,9 @@ class UserModel extends Model {
         DocumentSnapshot docUser =
         await Firestore.instance.collection("users").document(firebaseUser.uid).get();
         userData = docUser.data;
+        print(firebaseUser.toString());
       }
     }
-    notifyListeners( );
+    notifyListeners();
   }
 }

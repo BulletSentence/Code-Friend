@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:codefriend/models/user_model.dart';
 import 'package:codefriend/tiles/drawer_tile.dart';
 import 'package:codefriend/views/Login/login_screen.dart';
+import 'package:codefriend/views/Welcome/welcome_screen.dart';
 import 'package:codefriend/widgets/popup_exit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -82,8 +83,13 @@ class CustomDrawer extends StatelessWidget {
                                   else
                                     Navigator.of(context).pop();
                                     model.signOut();
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => WelcomeScreen(),
+                                    ),
+                                  );
                                 },
-                              )
+                              ),
                             ],
                           );
                         },
@@ -95,7 +101,7 @@ class CustomDrawer extends StatelessWidget {
               Divider(color: Colors.transparent),
               DrawerTile(Icons.home, "Home", pageController, 0),
               DrawerTile(Icons.chat, "Conversar", pageController, 1),
-              //DrawerTile(Icons.book, "Agenda", pageController, 2),
+              DrawerTile(Icons.whatshot, "Desafios", pageController, 2),
               //DrawerTile(Icons.whatshot, "Desafios Diários", pageController, 3),
             ],
           )

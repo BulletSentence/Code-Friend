@@ -1,6 +1,7 @@
 import 'package:codefriend/constants.dart';
 import 'package:codefriend/models/user_model.dart';
 import 'package:codefriend/tabs/home_tab.dart';
+import 'package:codefriend/views/Challenges/challenge.dart';
 import 'package:codefriend/views/Chat/chat_page.dart';
 import 'package:codefriend/views/Welcome/welcome_screen.dart';
 import 'package:codefriend/widgets/custom_drawer.dart';
@@ -39,16 +40,16 @@ class _HomeScreenState extends State<HomeScreen> {
               Scaffold(
                 appBar: AppBar(
                   backgroundColor: kPrimaryColor,
-                  title: Text("Agenda"),
+                  title: Text("Seus Desafios Diários"),
                   centerTitle: true,
                 ),
-                body: null,
+                body: challenge(),
                 drawer: CustomDrawer(_pageController),
               ),
               Scaffold(
                 appBar: AppBar(
                   backgroundColor: kPrimaryColor,
-                  title: Text("Desafios diários"),
+                  title: Text("Nada"),
                   centerTitle: true,
                 ),
                 body: null,

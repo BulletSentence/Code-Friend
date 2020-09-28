@@ -44,7 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Widget _introScreen() {
   return ScopedModelDescendant<UserModel>(builder: (context, child, model) {
-    "${!model.isLoggedIn() ? "" : model.userData["name"]}";
     return Stack(
       children: <Widget>[
         SplashScreen(
